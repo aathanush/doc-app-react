@@ -13,6 +13,7 @@ import PatientDoctorView from "./patient/patient-doctor-view";
 import PatientAppointmentView from "./patient/patient-appointment-view";
 import PatientLogin from "./patient/patient-login";
 import Logout from "./patient/logout";
+import PatientRegistration from "./patient/patient-registration";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
         {
           path:"logout",
           element:<Logout/>
+        },
+        {
+          path:"register",
+          element:<PatientRegistration/>
         }
       ]
     },

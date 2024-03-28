@@ -5,19 +5,9 @@ export default function PatientLogin() {
     let [name, setName] = useState("");
 let [password, setPassword] = useState("");
 
-// useEffect(() => {
-//     const fetchData = async () => {
-//         try {
-//             const response = await axios.get('http://localhost:8090/Doctor');
-//             setDocList(response.data);
-//             console.log(response.data);
-//         } catch (error) {
-//             console.error('Error fetching data:', error);
-//         }
-//     };
-
 
 const handleSubmit = (e) => {
+    e.preventDefault();
     console.log(name);
     console.log(password);
     axios.post("http://localhost:8090/patient/login", {
@@ -34,7 +24,7 @@ const handleSubmit = (e) => {
 };
 return (
     <>
-        <div className="login-container">
+        <div>
         <h3 align="center"> Patient Login:</h3>
         <form onSubmit={handleSubmit} align="center">
             <p align="center">E-mail ID:

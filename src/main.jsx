@@ -15,6 +15,12 @@ import PatientLogin from "./patient/patient-login";
 import Logout from "./patient/logout";
 import PatientRegistration from "./patient/patient-registration";
 import HomeComponent from "./home/home";
+import Admin from "./admin/admin";
+import DocNavigation from "./doctor/doc-navi";
+import DoctorHome from "./doctor/doc-home";
+import DocAppointment from "./doctor/doc-app";
+import DocLogin from "./doctor/doc-login";
+
 const router = createBrowserRouter([
   {
     path:"/",
@@ -23,6 +29,40 @@ const router = createBrowserRouter([
     children:[
       {path:"home",
     element:<HomeComponent/>}
+    ]
+  },
+  {
+    path:"/",
+    element:<Outlet/>,
+    errorElement:<ErrorPage/>,
+    children:[
+      {path:"admin",
+    element:<Admin/>}
+    ]
+  },
+  {
+    path: "/",
+    element: <Outlet/>,
+    errorElement: <ErrorPage/>,
+    children: [
+      {path:"doctor",
+    element: <DocNavigation/>,
+      children:[
+        {
+          path:"",
+          element:<DoctorHome/>,
+
+        },
+        {
+          path:"appointments",
+          element:<DocAppointment/>
+        },
+        {
+          path:"login",
+          element:<DocLogin/>
+        }
+      ]
+    }
     ]
   },
   {

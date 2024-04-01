@@ -32,11 +32,9 @@ export default function PatientAppointmentView() {
 
     return (
         <>
-        {filterappList.map((appointment) => (
-            <AppointmentCard key={appointment.id} obj={appointment} />
-        ))}
+        
+        {filterappList.length === 0 ? (<p>No appointments found. Please reload or try again after some time.</p>):(filterappList.map((appointment) => (  <AppointmentCard key={appointment.id} obj={appointment} /> )))}
 
-        {/* Pagination controls */}
         <ReactPaginate
         className='pagination-container'
             previousLabel={<AiFillLeftCircle className='page-item left' />}

@@ -14,7 +14,17 @@ import PatientAppointmentView from "./patient/patient-appointment-view";
 import PatientLogin from "./patient/patient-login";
 import Logout from "./patient/logout";
 import PatientRegistration from "./patient/patient-registration";
+import HomeComponent from "./home/home";
 const router = createBrowserRouter([
+  {
+    path:"/",
+    element:<Outlet/>,
+    errorElement:<ErrorPage/>,
+    children:[
+      {path:"home",
+    element:<HomeComponent/>}
+    ]
+  },
   {
     path: "/",
     element: <Outlet/>,

@@ -373,3 +373,61 @@ i {
   justify-content: center;
   width: 100%;
 }
+
+
+
+.appointment-card {
+  border: 1px solid black;
+  padding: 16px;
+  margin: 16px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-details {
+  display: flex;
+  flex-direction: column;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.confirmed {
+  color: green;
+}
+
+.not-confirmed {
+  color: red;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center; /* Center the pagination horizontally */
+  margin-top: 20px; /* Add spacing between the pagination and other content */
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+}
+
+.page-item {
+  margin: 0 5px;
+  padding: left 15px;
+}
+
+.left{
+  align-self: left;
+}
+
+.right{
+  align-self: right;
+}

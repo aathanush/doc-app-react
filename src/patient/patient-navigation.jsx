@@ -19,6 +19,9 @@ return (
 <Link to="login">Log in</Link>
 </li>
 <li>
+<Link to="reviews">doc reviews</Link>
+</li>
+<li>
 <Link to="logout">Log out</Link>
 </li>
 <li>

@@ -20,6 +20,7 @@ import DocNavigation from "./doctor/doc-navi";
 import DoctorHome from "./doctor/doc-home";
 import DocAppointment from "./doctor/doc-app";
 import DocLogin from "./doctor/doc-login";
+import DoctorReviews from "./patient/docreview";
 
 const router = createBrowserRouter([
   {
@@ -86,6 +87,10 @@ const router = createBrowserRouter([
         {
           path:"appointments",
           element:<PatientAppointmentView/>
+        },
+        {
+          path:"reviews",
+          element:<DoctorReviews/>
         },
         {
           path:"login",

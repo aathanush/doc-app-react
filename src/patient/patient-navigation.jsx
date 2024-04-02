@@ -16,13 +16,10 @@ return (
 <Link to="appointments">Appointments</Link>
 </li>
 <li>
-<Link to="login">Log in</Link>
+{window.sessionStorage.getItem("patientId") === null ? (<Link to="login">Log in</Link>):( <Link to="logout">Log out</Link>)}
 </li>
 <li>
 <Link to="reviews">doc reviews</Link>
-</li>
-<li>
-<Link to="logout">Log out</Link>
 </li>
 <li>
 <Link to="register">Register</Link>

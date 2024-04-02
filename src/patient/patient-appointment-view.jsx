@@ -4,12 +4,13 @@ import AppointmentCard from './appointment-card';
 import ReactPaginate from 'react-paginate';
 import { AiFillLeftCircle, AiFillRightCircle } from "react-icons/ai"; // icons form react-icons
 import { IconContext } from "react-icons"; // for customizing icons
+import { Navigate } from 'react-router-dom';
 
 export default function PatientAppointmentView() {
     const [page, setPage] = useState(0); 
     const [appList, setappList] = useState([]);
     const [filterappList, setfilterappList] = useState([]);
-    const n = 2; 
+    const n = 1; 
 
 
     useEffect(() => {
@@ -28,13 +29,14 @@ export default function PatientAppointmentView() {
         };
 
         fetchData();
-    }, [page]);
+    });
 
     return (
         <>
-        
+        {window.sessionStorage.getItem("patientId") == null ? (<Navigate to="/patient/login" />):(<></> )}
         {filterappList.length === 0 ? (<p>No appointments found. Please reload or try again after some time.</p>):(filterappList.map((appointment) => (  <AppointmentCard key={appointment.id} obj={appointment} /> )))}
 
+        {filterappList.length === 0 ?<p></p>:
         <ReactPaginate
         className='pagination-container'
             previousLabel={<AiFillLeftCircle className='page-item left' />}
@@ -46,7 +48,7 @@ export default function PatientAppointmentView() {
             onPageChange={(selected) => setPage(selected.selected)}
             containerClassName={'pagination'}
             activeClassName={'active'}
-        />
+        />}
     </>
 
         

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
-import { Navigate } from "react-router-dom";
+import { Navigate,useNavigate } from "react-router-dom";
 export default function PatientLogin() {    
     let [name, setName] = useState("");
 let [password, setPassword] = useState("");
-
+const navigate=useNavigate();
 
 const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,15 +15,14 @@ const handleSubmit = (e) => {
         password: password
     }).then((response) => {
         window.sessionStorage.setItem("patientId", response.data.patientId);
-        return (
-            <Navigate to="/patient/"/>
-        )
+        navigate("/patient/");
     }).catch((error) => {
         alert("Invalid Credentials");
     })
 };
 return (
     <>
+    
         <div>
         <h3 align="center"> Patient Login:</h3>
         <form onSubmit={handleSubmit} align="center">

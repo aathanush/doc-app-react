@@ -1,4 +1,5 @@
 
+import axios from "axios";
 export default function AppointmentCard( {obj} ) {
     return (
         <div className="appointment-card">
@@ -8,6 +9,8 @@ export default function AppointmentCard( {obj} ) {
                 <p>{obj.timing}</p>
                 <p>{obj.description}</p>
                 {obj.status ? (<p className="confirmed">Confirmed</p>) : (<p className="not-confirmed">Not Confirmed</p>)}
+                {obj.status ? (<button> Perform Payment</button>) : (<p></p>)}
+
             </div>
         </div>
 

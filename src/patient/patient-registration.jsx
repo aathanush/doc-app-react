@@ -18,7 +18,7 @@ const handleSubmit = (e) => {
     })
     .then((response) => {
         console.log(response.data);
-        alert("Patient Registration Successful");
+        alert("Patient Registration Successful. Log in with your credentials to continue"); 
     })
     .catch((error) => {
         console.log({

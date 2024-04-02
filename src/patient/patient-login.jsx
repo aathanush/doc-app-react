@@ -16,6 +16,7 @@ const handleSubmit = (e) => {
     }).then((response) => {
         window.sessionStorage.setItem("patientId", response.data.patientId);
         navigate("/patient/");
+        window.location.reload();
     }).catch((error) => {
         alert("Invalid Credentials");
     })

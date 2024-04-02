@@ -42,7 +42,7 @@ export default function DoctorReviews() {
                             <h3>Doctor Name: {review.doctor.name}</h3>
                             <p>Patient Name: {review.patient.name}</p>
                             <p>Rating: {review.rating}</p>
-                            <p>Review Text: {review.reviewText}</p>
+                            <p>Review: {review.reviewText}</p>
                             <hr />
                         </div>
                     ))

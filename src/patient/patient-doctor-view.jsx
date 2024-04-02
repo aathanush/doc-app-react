@@ -23,7 +23,7 @@ export default function PatientDoctorView() {
         <div>
             {docList.map((doctor) => (
                 <>
-                <DoctorCard obj={doctor} />
+                <DoctorCard obj={doctor} key={doctor.id}/>
                 </>
             ))}
         </div>

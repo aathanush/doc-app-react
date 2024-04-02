@@ -43,8 +43,8 @@ export default function PatientAppointmentView() {
             nextLabel={<AiFillRightCircle className='page-item right'/>}
             breakLabel={'...'}
             pageCount={Math.ceil(appList.length / n)}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={5}
+            marginPagesDisplayed={0}
+            pageRangeDisplayed={0}
             onPageChange={(selected) => setPage(selected.selected)}
             containerClassName={'pagination'}
             activeClassName={'active'}

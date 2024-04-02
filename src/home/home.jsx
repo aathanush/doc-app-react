@@ -13,6 +13,7 @@ export default function HomeComponent() {
           <li>Grow your practice and reach more patients.</li>
           <li>Manage appointments with flexibility and ease.</li>
           <li>Connect with a professional network and collaborate on patient care.</li>
+          <li>Easy appointment management.</li>
         </ul>
         <Link to="/doctor" className="button" class="btn">Visit Doctor Portal</Link>
       </article>

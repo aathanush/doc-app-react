@@ -1,10 +1,13 @@
 import "./docapp.css";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
 export default function DocAppointment() {
     const [appointmentList, setAppointmentList] = useState([]);
     const [filteredAppointmentList, setFilteredAppointmentList] = useState([]);
     const [filterDate, setFilterDate] = useState('');
+
+    const [amount, setAmount] = useState(200); // State for amount
 
     useEffect(() => {
         axios.get(`http://localhost:8090/doctor/get_appointment/${sessionStorage.getItem('doctorId')}`)
@@ -44,7 +47,7 @@ export default function DocAppointment() {
     const confirmAppointment = (id) => {
         const confirmData = {
             appointmentId: id,
-            amount: 200
+            amount: amount
         };
 
         axios.post('http://localhost:8090/doctor/confirm_appointment', confirmData)
@@ -57,13 +60,15 @@ export default function DocAppointment() {
             });
     };
 
+    const handleAmountChange = (e) => {
+        setAmount(e.target.value);
+    };
+
     const cancelAppointment = (id) => {
         axios.post(`http://localhost:8090/doctor/cancel_appointment/${id}`, {})
             .then(response => {
                 console.log('Appointment cancelled:', response.data);
-                System.out.println(response.data);
                 window.location.reload();
-                
             })
             .catch(error => {
                 console.error('Error cancelling appointment:', error);
@@ -88,15 +93,19 @@ export default function DocAppointment() {
                             <p>{appointment.date}</p>
                             <p>{appointment.timing}</p>
                             <p>{appointment.description}</p>
+                            
                             {appointment.status ? (
                                 <button onClick={() => cancelAppointment(appointment.id)} className="not-booked">Cancel</button>
-                            ) : (
-                                <button onClick={() => confirmAppointment(appointment.id)} className="booked">Confirm</button>
+                            ) : (<>
+                                <input type="text" value={amount} onChange={handleAmountChange} /> {/* Input for amount */}
+                                <button onClick={() => confirmAppointment(appointment.id)} className="booked">Confirm</button></>
                             )}
-                        </div>
+</div>
                     </div>
                 ))}
             </section>
         </>
     );
 }
+
+                       

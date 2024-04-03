@@ -22,6 +22,7 @@ import DocAppointment from "./doctor/doc-app";
 import DocLogin from "./doctor/doc-login";
 import DoctorReviews from "./patient/docreview";
 import PostReview from "./patient/post-review";
+import DoctorDetails from "./patient/doctordetails";
 const router = createBrowserRouter([
   {
     path:"/",
@@ -83,6 +84,10 @@ const router = createBrowserRouter([
         {
           path:"doctors",
           element:<PatientDoctorView/>
+        },
+        {
+          path: "docdetails/:id",
+          element: <DoctorDetails />
         },
         {
           path:"appointments",

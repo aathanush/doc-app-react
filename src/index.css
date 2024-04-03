@@ -431,3 +431,7 @@ p {
 .right{
   align-self: right;
 }
+
+.docdetails{
+  align-self: center;
+}

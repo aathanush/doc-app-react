@@ -14,7 +14,7 @@ export default function PatientNavigation({ loggedIn, username, setLoggedIn, set
         loggedIn = false;
     } else {
         loggedIn = true;
-        username = sessionStorage.getItem('patientId');
+        username = sessionStorage.getItem('patientName');
     }
     return (
         <>
@@ -22,6 +22,9 @@ export default function PatientNavigation({ loggedIn, username, setLoggedIn, set
                 <h1>Patient Appointment Portal</h1>
                 <nav>
                     <ul>
+                        <li>
+                            <span><b>Hi {loggedIn?(username):('User. Log in!')}</b></span>
+                        </li>
                         <li>
                             <Link to="">Home</Link>
                         </li>
@@ -36,9 +39,6 @@ export default function PatientNavigation({ loggedIn, username, setLoggedIn, set
                         </li>
                         {loggedIn ? (
                             <>
-                                <li>
-                                    <span>{username}</span>
-                                </li>
                                 <li>
                                     <Link to="/patient" onClick={logoutUser}>Log out</Link>
                                 </li>

@@ -15,6 +15,7 @@ const handleSubmit = (e) => {
         password: password
     }).then((response) => {
         window.sessionStorage.setItem("patientId", response.data.patientId);
+        window.sessionStorage.setItem("patientName", response.data.name);
         navigate("/patient/");
         window.location.reload();
     }).catch((error) => {

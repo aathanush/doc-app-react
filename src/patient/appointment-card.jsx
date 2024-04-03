@@ -8,8 +8,8 @@ export default function AppointmentCard( {obj} ) {
                 <h3>{obj.date}</h3>
                 <p>{obj.timing}</p>
                 <p>{obj.description}</p>
-                {obj.status ? (obj.payment === null? (<p className="not-confirmed">Confirmed but not paid</p>):(<p className="confirmed">Confirmed and paid</p>)) : (<p className="not-confirmed">Not Confirmed</p>)}
-                {obj.status ? (obj.payment === null ? (<button> Perform Payment</button>) : (<Link to="patient/review"><button >Post Review</button></Link>)) : (<p></p>)}
+                {obj.status ? (obj.payment.successful === false? (<p className="not-confirmed">Confirmed but not paid</p>):(<p className="confirmed">Confirmed and paid</p>)) : (<p className="not-confirmed">Not Confirmed</p>)}
+                {obj.status ? (obj.payment.successful === false ? (<button> Perform Payment</button>) : (<Link to="/patient/review"><button >Post Review</button></Link>)) : (<p></p>)}
 
             </div>
         </div>

@@ -102,7 +102,7 @@ const router = createBrowserRouter([
           element:<PatientLogin/>
         },
         {
-          path:"review",
+          path:"review/:id",
           element:< PostReview/>
         },
         {

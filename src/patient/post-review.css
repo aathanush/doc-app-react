@@ -1,30 +1,37 @@
-/* post-review.css */
-.rating {
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
+.review {
+    margin: 20px;
+  }
+  
+  .rating {
+    font-size: 24px;
   }
   
   .rating span {
-    color: black;
-    font-size: 2em;
-    user-select: none;
+    cursor: pointer;
+    color: #333; /* Default color */
   }
   
-  .rating span:hover,
-  .rating span.clicked,
-  .rating span.clicked ~ span {
-    color: gold; /* Set color to gold for the hovered or clicked star and all previous stars */
+  .rating span.active {
+    color: #ffd700; /* Golden color */
   }
   
   textarea {
     width: 100%;
-    min-height: 100px;
-    margin-bottom: 10px;
+    height: 100px;
+    margin-top: 10px;
+    padding: 5px;
   }
   
   button {
-    display: block;
-    width: 100%;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
   }
   

@@ -60,7 +60,7 @@ export default function PostReview() {
     <div className="review">
       <div className="rating">
         {[1, 2, 3, 4, 5].map((star) => (
-          <span key={star} onClick={() => rate(star)}>☆</span>
+          <span key={star} className={rating >= star ? 'active' : ''} onClick={() => rate(star)}>☆</span>
         ))}
       </div>
       {rating > 0 && <p className="rating">You have rated {rating} star(s) out of 5</p>}

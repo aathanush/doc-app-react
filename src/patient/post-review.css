@@ -1,0 +1,30 @@
+/* post-review.css */
+.rating {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .rating span {
+    color: black;
+    font-size: 2em;
+    user-select: none;
+  }
+  
+  .rating span:hover,
+  .rating span.clicked,
+  .rating span.clicked ~ span {
+    color: gold; /* Set color to gold for the hovered or clicked star and all previous stars */
+  }
+  
+  textarea {
+    width: 100%;
+    min-height: 100px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+  }
+  

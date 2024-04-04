@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../index.css";
 
@@ -8,6 +9,7 @@ let [password, setPassword] = useState("");
 let [age, setAge] = useState(0);
 let [gender, setGender] = useState("");
 let [email, setEmail] = useState("");
+let navigate = useNavigate();
 
 const handleSubmit = (e) => {
     e.preventDefault(); // Prevent form submission
@@ -21,6 +23,8 @@ const handleSubmit = (e) => {
     .then((response) => {
         console.log(response.data);
         alert("Patient Registration Successful. Log in with your credentials to continue"); 
+        navigate("/patient/login");
+
     })
     .catch((error) => {
         console.log({

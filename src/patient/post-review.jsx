@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+
 export default function PostReview() {
   const [rating, setRating] = useState(0);
   const [reviewText, setReviewText] = useState('');
@@ -44,7 +45,13 @@ export default function PostReview() {
     axios.post(`http://localhost:8090/AddDoctorReview/${Number(id)}`, reviewData)
       .then((response) => {
         console.log(response);
+        axios.delete('http://localhost:8090/appointment/delete/'+id).then((response) => {
+          console.log(response.data);
+        }).catch((error) => {
+          console.error(error);
+        })
         alert("Review confirmed");
+
         navigate("/patient/");
         
       })

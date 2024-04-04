@@ -1,4 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
+import "../index.css";
 
 export default function PatientNavigation({ loggedIn, username, setLoggedIn, setUsername }) {
     const reloadPage = () => {

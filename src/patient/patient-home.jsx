@@ -1,4 +1,6 @@
 import "./pathome.css";
+import "../index.css";
+
 export default function PatientHome() {
     return (
         <>

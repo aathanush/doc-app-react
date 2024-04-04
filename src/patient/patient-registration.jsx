@@ -1,5 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
+import "../index.css";
+
 export default function PatientRegistration() {
     let [name, setName] = useState("");
 let [password, setPassword] = useState("");

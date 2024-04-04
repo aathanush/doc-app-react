@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import "../index.css";
+
 export default function DoctorCard( {obj} ) {
   const navigate=useNavigate();
     return (
-        <div>
+        <div className="appointment-card">
           <div>
             <h3>{obj.name}</h3>
             <p>{obj.spec}</p>

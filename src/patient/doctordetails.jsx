@@ -4,6 +4,8 @@ import axios from "axios";
 import { useEffect } from "react";
 import {toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import "../index.css";
+
 export default function DoctorDetails() {
     const today = new Date();
     today.setDate(today.getDate()+1);

@@ -5,6 +5,7 @@ import ReactPaginate from 'react-paginate';
 import { AiFillLeftCircle, AiFillRightCircle } from "react-icons/ai"; // icons form react-icons
 import { IconContext } from "react-icons"; // for customizing icons
 import { Navigate } from 'react-router-dom';
+import "../index.css";
 
 export default function PatientAppointmentView() {
     const [page, setPage] = useState(0); 
@@ -34,7 +35,7 @@ export default function PatientAppointmentView() {
     return (
         <>
         {window.sessionStorage.getItem("patientId") == null ? (<Navigate to="/patient/login" />):(<></> )}
-        {filterappList.length === 0 ? (<p>No appointments found. Please reload or try again after some time.</p>):(filterappList.map((appointment) => (  <AppointmentCard key={appointment.id} obj={appointment} /> )))}
+        {filterappList.length === 0 ? (<p>No appointments found.</p>):(filterappList.map((appointment) => (  <AppointmentCard key={appointment.id} obj={appointment} /> )))}
 
         {filterappList.length === 0 ?<p></p>:
         <ReactPaginate

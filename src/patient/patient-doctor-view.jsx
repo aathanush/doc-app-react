@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DoctorCard from './doctor-card';
+import "../index.css";
+
 
 export default function PatientDoctorView() {
     const [docList, setDocList] = useState([]);

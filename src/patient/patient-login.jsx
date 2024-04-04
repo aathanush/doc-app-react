@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { Navigate,useNavigate } from "react-router-dom";
+import "../index.css";
+
 export default function PatientLogin() {    
     let [name, setName] = useState("");
 let [password, setPassword] = useState("");

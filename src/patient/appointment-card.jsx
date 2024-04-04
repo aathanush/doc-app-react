@@ -4,6 +4,8 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
 import Payment from "./payment";
+import "../index.css";
+
 export default function AppointmentCard({ obj }) {
     let [paymentSuccess,setpaymentSuccess]=useState(false);
     const handleClick = async () => {

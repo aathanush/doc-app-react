@@ -2,13 +2,20 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-
+import { useState } from "react";
+import Payment from "./payment";
 export default function AppointmentCard({ obj }) {
+    let [paymentSuccess,setpaymentSuccess]=useState(false);
     const handleClick = async () => {
         axios.post(`http://localhost:8090/patient/perform_payment/${obj.id}`, "UPI")
-            .then(() => toast("Payment done successfully"))
+            .then(() => {setpaymentSuccess(true);})
             .catch((e) => toast(e));
     };
+
+    const onClose = ()=>{
+     setpaymentSuccess(false);   
+     toast("Payment done successfully");
+    }
 
     return (
         <div className="appointment-card">
@@ -38,6 +45,7 @@ export default function AppointmentCard({ obj }) {
                 ) : (
                     <p></p>
                 )}
+                {paymentSuccess && <Payment amount={obj.payment.amount} onClose={onClose}/>}
             </div>
         </div>
     );

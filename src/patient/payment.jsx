@@ -30,63 +30,27 @@ export default function Payment({amount, onClose}) {
             <MDBCardBody>
               <MDBRow className="mb-4">
                 <MDBCol>
-                  <MDBInput label="First name" id="form1" type="text" />
+                  <MDBInput label="First name" id="form1" type="text" required/>
                 </MDBCol>
                 <MDBCol>
-                  <MDBInput label="Last name" id="form2" type="text" />
+                  <MDBInput label="Last name" id="form2" type="text" required/>
                 </MDBCol>
               </MDBRow>
               <MDBInput
                 wrapperClass="mb-4"
-                label="Address"
-                id="form3"
-                type="text"
-              />
-              <MDBInput
-                wrapperClass="mb-4"
                 label="Email"
                 id="form4"
-                type="email"
+                type="email" required
               />
               <MDBInput
                 wrapperClass="mb-4"
                 label="Phone"
                 id="form5"
-                type="number"
+                type="number" required
               />
               <hr className="my-4" />
-              <MDBCheckbox
-                name="flexCheck"
-                value=""
-                id="checkoutForm1"
-                label="Shipping address is the same as my billing address"
-              />
-              <MDBCheckbox
-                name="flexCheck"
-                value=""
-                id="checkoutForm2"
-                label=" Save this information for next time"
-                defaultChecked
-              />
               <hr className="my-4" />
               <h5 className="mb-4">Payment</h5>
-              <MDBRadio
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-                label="Credit card"
-                checked
-              />
-              <MDBRadio
-                name="flexRadioDefault"
-                id="flexRadioDefault2"
-                label="Debit card"
-              />
-              <MDBRadio
-                name="flexRadioDefault"
-                id="flexRadioDefault2"
-                label="Paypal"
-                wrapperClass="mb-4"
-              />
               <MDBRow>
                 <MDBCol>
                   <MDBInput
@@ -94,6 +58,7 @@ export default function Payment({amount, onClose}) {
                     id="form6"
                     type="text"
                     wrapperClass="mb-4"
+                    required
                   />
                 </MDBCol>
               </MDBRow>
@@ -104,6 +69,7 @@ export default function Payment({amount, onClose}) {
                     id="form8"
                     type="text"
                     wrapperClass="mb-4"
+                    required
                   />
                 </MDBCol>
                 <MDBCol md="3">
@@ -112,6 +78,7 @@ export default function Payment({amount, onClose}) {
                     id="form8"
                     type="text"
                     wrapperClass="mb-4"
+                    required
                   />
                 </MDBCol>
               </MDBRow>

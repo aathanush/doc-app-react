@@ -14,6 +14,7 @@ export default function DocLogin() {
             spec: spec
         }).then((response) => {
             window.sessionStorage.setItem("doctorId", response.data.docId);
+            window.sessionStorage.setItem("doctorName", response.data.name);
             navigate("/doctor");
             window.location.reload();
         }).catch((error) => {

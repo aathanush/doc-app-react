@@ -21,6 +21,9 @@ export default function DocNavigation({ loggedIn, username, setLoggedIn, setUser
                 <nav>
                     <ul>
                         <li>
+                            <span><b>Hi {loggedIn?(window.sessionStorage.getItem("doctorName")):('Doctor. Log in!')} </b></span>
+                        </li>
+                        <li>
                             <Link to="/doctor">Home</Link>
                         </li>
                         <li>
@@ -28,9 +31,7 @@ export default function DocNavigation({ loggedIn, username, setLoggedIn, setUser
                         </li>
                         {loggedIn ? (
                             <>
-                                <li>
-                                    <span>{username}</span>
-                                </li>
+                                
                                 <li>
                                     <Link to="/doctor" onClick={logoutUser}>Log out</Link>
                                 </li>

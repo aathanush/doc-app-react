@@ -2,12 +2,13 @@ import "./post-review.css";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 export default function PostReview() {
   const [rating, setRating] = useState(0);
   const [reviewText, setReviewText] = useState('');
   const { id } = useParams();
   const [doctorId, setDoctorId] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch appointment details to get the doctor ID
@@ -44,6 +45,8 @@ export default function PostReview() {
       .then((response) => {
         console.log(response);
         alert("Review confirmed");
+        navigate("/patient/");
+        
       })
       .catch((error) => {
         console.error(error);
